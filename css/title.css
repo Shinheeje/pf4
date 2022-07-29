@@ -1,0 +1,188 @@
+#title {
+  width: calc(100% - 150px);
+  height: 100%;
+  background-color: #eee;
+  min-height: 480px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  left: 150px;
+}
+#title::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  background-color: black;
+  
+}
+#title div.inner {
+ width: 80%;
+  position: relative;
+  color: white;
+  z-index: 2;
+ height: 100%;
+}
+#title div.inner h2{
+  position: relative;
+  z-index: 1;
+  font-size: 65px;
+  margin-bottom: 14px;
+  animation-name: h2up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: :ease-out;
+  overflow: hidden;
+}
+#title div.inner h2 span{
+  display: block;
+  animation-name: h2up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: :ease-out;
+}
+
+@keyframes h2up{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0.4;
+  }
+}
+
+#title div.inner p{
+  font-size: 26px;
+  z-index: 1;
+  animation-name: pup;
+  animation-duration: 1.3s;
+/*   animation-delay: 1s; */
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: :ease-out;
+  overflow: hidden;
+}
+@keyframes pup{
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+#title div.inner p span{
+  display: block;
+  animation-name: pup;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: :ease-out;
+}
+#title span.titleaside{
+  position: absolute;
+  right: calc(20% / 4 - 82px);
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  justify-content: space-between;
+  width: 164px;
+}
+#title span.titleaside a.campaign{
+  transform: rotate(90deg) translateX(78px);
+  font-size: 13px;
+  
+}
+#title span.titleaside a.scroll{
+ position: relative;
+ transform:translateX(-15px);
+ font-size: 10px;
+  animation-name: colorchange;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes colorchange{
+  
+  80%{
+    color: blue;
+  }
+}
+  
+#title span.titleaside a.scroll::before{
+  content: "";
+  width: 7px;
+  height: 7px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  border: 3px solid;
+  border-left: transparent;
+  border-top: transparent;
+  transform:translateY(-10px) rotate(45deg);
+  color: #333;
+  left: calc(50% - 7.5px);
+  animation-name: scrollani1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scrollani1{
+  0%{
+    opacity: 1;
+  }
+  10%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#title span.titleaside a.scroll::after{
+  content: "";
+  width: 7px;
+  height: 7px;
+  display: block;
+  position: absolute;
+  top: -20px;
+  border: 3px solid;
+  border-left: transparent;
+  border-top: transparent;
+  transform: translateY(-10px) rotate(45deg);
+  color: #333;
+  left: calc(50% - 7.5px);
+  animation-name: scrollani02;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes scrollani02{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+#title div.inner iframe.video{
+  width: 1184px;
+  height: 734px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
